@@ -24,6 +24,8 @@ function loadChannel() {
     var subscriber_ct = document.getElementById("subscriber-count");
     var view_ct = document.getElementById("view-count");
     var video_ct = document.getElementById("video-count");
+    var link = document.getElementById("link");
+    var desc = document.getElementById("description");
 
     while(api_key=="")
         api_key = prompt("Enter API Key", "");
@@ -42,7 +44,9 @@ function loadChannel() {
         chanID = data.items[0].id.channelId;
 
         pfp.setAttribute('src', data.items[0].snippet.thumbnails.default.url);
+        link.setAttribute('href', "https://www.youtube.com/channel/"+chanID);
         username.innerHTML = data.items[0].snippet.title;
+        desc.innerHTML = data.items[0].snippet.description;
 
         url_1 = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id='+chanID+'&key='+api_key;
 
@@ -59,7 +63,7 @@ function loadChannel() {
             video_ct.style.fontFamily = "'Zen Dots', 'Original Surfer', 'Segoe UI', 'Work Sans', sans-serif";
 
             data_container.style.display = "block";
-            data_container.scrollIntoView();
+            data_container.scrollIntoView({behavior:'smooth'});
 
             // url_2 = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id='+chanID+'&key='+api_key;
 
