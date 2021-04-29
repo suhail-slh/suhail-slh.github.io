@@ -1,0 +1,103 @@
+:root {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    --font-color-1: #0B0C10;
+    --font-color-2: #C5C6C7;
+    --container-color-1: #45A29E;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Zen Dots', 'Original Surfer', 'Segoe UI', 'Work Sans', sans-serif;
+    background-image: url('./media/typing2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+    user-select: none;
+}
+
+#cover {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+#cover > p {
+    align-self: center;
+    font-size: 8rem;
+    color: var(--font-color-1);
+    margin: 10rem 0;
+    border: 3px solid var(--container-color-1);
+    border-radius: 1rem;
+    background-color: var(--container-color-1);
+}
+#cover > p > span{
+    color: var(--font-color-2);
+}
+#cover > .search-box {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
+#search-username-ip {
+    height: 3rem;
+    width: 50rem;
+    font-size: 1.5rem;
+}
+#search-username-ip:focus {
+    outline: none;
+}
+#search-username-btn {
+    width: 5rem;
+    background-color: lightsteelblue;
+    border: none;
+}
+#search-username-btn:hover {
+    background-color: rgb(44, 39, 94);
+    cursor: pointer;
+}
+
+#data-container {
+    background-color: var(--container-color-1);
+    display: none;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    padding: 1rem;
+}
+#profile-summary {
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    text-align: center;
+    overflow-x: scroll;
+    padding: 1rem;
+}
+#profile-summary > img {
+    border: 3px solid black;
+    border-radius: 1rem;
+}
+#profile-summary > p {
+    margin: auto auto;
+}
+#profile-summary > p > span{
+    color: var(--font-color-2);
+}
+#prev{
+    grid-row: 2;
+    grid-column: 1;
+}
+#data-container > .chart{
+    grid-row: 2;
+    grid-column: 2;
+    display: none;
+}
+#next {
+    grid-row: 2;
+    grid-column: 3;
+}
