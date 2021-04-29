@@ -1,26 +1,33 @@
 :root {
     scroll-behavior: smooth;
     scrollbar-width: none;
-    --font-color-1: #0B0C10;
-    --font-color-2: #C5C6C7;
-    --container-color-1: #45A29E;
+    --font-color-1: #3FBAC2;
+    --font-color-2: #676D6E;
+    --container-color-1: #F5DEB3;
+}
+
+* {
+    font-family: 'Zen Dots', 'Original Surfer', 'Segoe UI', 'Work Sans', sans-serif;       
+    opacity: 0.97; 
+    user-select: none;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
 
+::placeholder {
+    color: var(--font-color-2);
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Zen Dots', 'Original Surfer', 'Segoe UI', 'Work Sans', sans-serif;
     background-image: url('./media/typing2.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-    opacity: 0.8;
-    user-select: none;
 }
 
 a {
@@ -54,6 +61,7 @@ a {
     font-size: 8rem;
     color: var(--font-color-1);
     margin: 10rem 0;
+    padding: 1rem;
     border: 3px solid var(--container-color-1);
     border-radius: 1rem;
     background-color: var(--container-color-1);
@@ -70,22 +78,24 @@ a {
     height: 3rem;
     width: 50rem;
     font-size: 1.5rem;
-    background-color: var(--font-color-2);
+    color: var(--font-color-2);
+    background-color: var(--container-color-1);
     border: none;
     border-radius: 4rem;
-    padding: 0 4rem 0 2rem;
+    padding: 0 3.5rem 0 2rem;
 }
 #search-username-ip:focus {
     outline: none;
 }
 #search-username-btn {
-    width: 5rem;
     border: none;
     background: none;
-    margin-left: -5rem;
+    margin-left: -3rem;
+    color: var(--font-color-2);
 }
 #search-username-btn:hover {
     cursor: pointer;
+    color: var(--font-color-1);
 }
 
 #data-container {
@@ -106,15 +116,16 @@ a {
     padding: 1rem;
 }
 #profile-summary > img {
-    /* border: 3px solid black; */
+    /* border: 3px solid var(--font-color-2); */
     border-radius: 1rem;
 }
 #profile-summary > p {
+    color: var(--font-color-2);
     margin: auto auto;
     padding: 1rem 0;
 }
 #profile-summary > p > span{
-    color: var(--font-color-2);
+    color: var(--font-color-1);
 }
 #prev{
     grid-row: 2;
