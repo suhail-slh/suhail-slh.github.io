@@ -3,50 +3,64 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Social Predator</title>
-        <link rel="shortcut icon" type="image/x-icon" href="./media/logo.svg" />
-        <link rel="stylesheet" href="./odometer-theme-default.css" />
-        <link rel="stylesheet" href="./index-styles.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="./media/logo.svg" />      
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Work+Sans:700,800" rel="stylesheet">
+        <link rel="stylesheet" href="./odometer-theme-default.css" />  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./index-styles.css" />
+        <link rel="stylesheet" href="./analysis-styles.css" />
     </head>
     <body>
         <div id="cover">
-            <h1>Social <span>Predator</span> <br> <span class="sub-heading">A <span class="highlight">Social</span> Search Tool</span></h1>
+            <h1>Social <span>Predator</span> <br> 
+              <span class="sub-heading">A <span class="highlight">Social</span> Search Tool</span>
+            </h1>
             <div class="search-box">
                 <input type="text" spellcheck="false" name="search-username-ip" id="search-username-ip" placeholder="Enter Username">
-                <button class="fa fa-search" onclick="loadChannel()" id="search-username-btn"></button>
+                <button class="fa fa-search" onclick="search()" id="search-username-btn"></button>
+            </div>            
+            <button class="analyze-btn" onclick="popUp()">Get Analyzed</button>
+        </div>
+
+        <div class="data-container">
+            <a href="" target="_blank" id="yt-link">
+                <img src="" id="yt-pfp">
+                <div class="profile-summary">
+                    <p style="padding-top: 0;"><span id="yt-username"></span></p>
+                    <div class="break"></div>                    
+                    <p>Subscribers <br><br> <span class="odometer" id="yt-subscriber-count"></span></p>
+                    <div class="break"></div>
+                    <p>Videos Uploaded<br><br> <span class="odometer" id="yt-video-count"></span></p>
+                    <p>Total Views <br><br> <span class="odometer" id="yt-view-count"></span></p> 
+                    <div class="break"></div>
+                    <p>Description <br><br> <span id="yt-description"></span></p>              
+                </div>
+            </a>
+        </div>
+
+        <div class="pop-up-container">
+            <div class="pop-up">
+              <header>
+                <button class="tab" onclick="switchTab(0)"><i class="fa fa-youtube-play" aria-hidden="true"></i> YouTube</button>
+                <button class="tab" onclick="switchTab(1)"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</button>
+                <button class="close" onclick="closePopUp()">&#10006;</button>
+              </header>
+              <form id="sign-in">
+                <label for="sign-in-username">Username</label>
+                <input type="text" spellcheck="false" id="sign-in-username" name="sign-in-username" placeholder="Enter Username" required><br>
+                <label for="sign-in-password">Password</label>
+                <input type="password" id="sign-in-password" name="sign-in-password" placeholder="Enter Password" required><br>
+                <input type="submit" value="" name="submit">
+              </form>
             </div>
         </div>
 
-        <div id="data-container">
-            <a href="" target="_blank" id="link">
-                <div id="profile-summary">
-                    <img src="./media/typing.jpg" id="pfp">
-                    <p>Username <br><br> <span id="username">Typer</span></p>
-                    <p>Subscribers <br><br> <span class="odometer" id="subscriber-count">0</span></p>
-                    <p>Total Views <br><br> <span class="odometer" id="view-count">0</span></p>   
-                    <p>Total Number of Videos <br><br> <span class="odometer" id="video-count">0</span></p>
-                    <div class="break"></div>
-                    <p>Description <br><br> <span id="description"></span></p>              
-                </div>
-            </a>
-            
-            <!-- <button id="prev" onclick="switchChartBy(-1)"><</button>
-            <div class="chart" id="chart1"></div>
-            <div class="chart" id="chart2"></div>
-            <div class="chart" id="chart3"></div>
-            <div class="chart" id="chart4"></div>
-            <button id="next" onclick="switchChartBy(1)">></button> -->
-        </div>
-
-        <script type="text/javascript" src='jquery-3.4.1.min.js'></script> 
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  
+        <script type="text/javascript" src='jquery-3.4.1.min.js'></script>
         <script src="./odometer.js"></script> 
-        <?php include './Connection.php';?>
-        <?php include './Charts.php';?>
-        <script type="text/javascript" src='./index-script.js'></script>               
+        <script type="text/javascript" src='./index-script.js'></script>
+        <script type="text/javascript" src='./analysis-script.js'></script>       
     </body>
 </html>
