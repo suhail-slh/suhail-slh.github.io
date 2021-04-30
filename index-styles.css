@@ -56,18 +56,22 @@ a {
         transform: translateY(0);
     }
 }
-#cover > p {
+#cover > h1 {
     align-self: center;
-    font-size: 8rem;
+    text-align: center;
+    font-size: 6rem;
     color: var(--font-color-1);
-    margin: 10rem 0;
+    margin: 5rem 0;
     padding: 1rem;
     border: 3px solid var(--container-color-1);
     border-radius: 1rem;
     background-color: var(--container-color-1);
 }
-#cover > p > span{
+#cover > h1 > span{
     color: var(--font-color-2);
+}
+#cover > h1 > .sub-heading {
+    font-size: 2rem;
 }
 #cover > .search-box {
     align-self: center;
@@ -139,4 +143,8 @@ a {
 #next {
     grid-row: 2;
     grid-column: 3;
+}
+
+.highlight {
+    color: var(--font-color-1);
 }
