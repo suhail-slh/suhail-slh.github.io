@@ -142,7 +142,7 @@ a {
 }
 
 .highlight {
-    color: var(--font-color-1);
+    color: var(--font-color-1) !important;
 }
 
 .break {
