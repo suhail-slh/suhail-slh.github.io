@@ -23,7 +23,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('./media/typing2.jpg');
+    background-image: url('./media/typing2.jpg'), url('./media/typing2.gif');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
